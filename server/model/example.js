@@ -1,4 +1,4 @@
-const {Sequelize, sequelize} = require("../config/database/db_config")
+const {Sequelize, sequelize} = require("../database/db_config")
 
 const ExampleTable = sequelize.define("ExampleTable", {
     id: {

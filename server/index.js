@@ -1,7 +1,7 @@
 const express = require('express')
 const config = require('./config/core_config');
 const {healthCheckDTORes} = require('./dto/test_dto')
-const { sequelize } = require("./config/database/db_config");
+const { sequelize } = require("./database/db_config");
 
 const app = express()
 app.use(express.json())
