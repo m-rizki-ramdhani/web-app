@@ -1,8 +1,20 @@
 const express = require('express')
 const config = require('./config/core_config');
 const {healthCheckDTORes} = require('./dto/test_dto')
+const { sequelize } = require("./config/database/db_config");
 
 const app = express()
+app.use(express.json())
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("Koneksi ke database berhasil!")
+  })
+  .catch((error) => {
+    console.error("Koneksi ke database gagal:", error)
+  })
+
 const port = config.PORT
 
 app.get('/api/health-check', (req, res) => {
