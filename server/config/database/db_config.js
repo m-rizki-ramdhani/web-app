@@ -1,7 +1,17 @@
 const Sequelize = require('sequelize')
-const config = require('../core_config')
 
-const sequelize = new Sequelize(config.DB)
+const config = {
+    development: {
+      username: "root",          // Username MySQL
+      password: "",              // Password MySQL (kosongkan jika menggunakan XAMPP default)
+      database: "my_database",   // Nama database yang Anda buat di phpMyAdmin
+      host: "localhost",         // Host MySQL
+      dialect: "mysql",          // Jenis database yang digunakan (MySQL)
+    }
+  };
+  
+
+const sequelize = new Sequelize(config.development)
 
 const db = {}
 
